@@ -3,6 +3,7 @@ import Head from 'next/head';
 import HomeBanner from '../components/Home';
 import Aboutme from '../components/Aboutme';
 import Technology from '../components/Technology';
+import Projects from '../components/Projects';
 export default function Home() {
 	return (
 		<>
@@ -15,6 +16,7 @@ export default function Home() {
 			<HomeBanner />
 			<Aboutme />
 			<Technology />
+			<Projects />
 		</>
 	);
 }

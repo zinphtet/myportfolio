@@ -33,6 +33,9 @@ const HomeStyle = styled.div`
 	}
 	& > * {
 		margin-bottom: 6rem;
+		@media screen and (max-width: 37.5rem) {
+			margin-bottom: 4rem;
+		}
 	}
 
 	.home_info {

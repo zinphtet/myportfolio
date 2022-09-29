@@ -5,6 +5,8 @@ export const light = {
 	thirdColor: '#2962ff',
 	lineColor: '#b0bec5',
 	hoverColor: '#82b1ff',
+	projBack: '#4b636e',
+	projText: '#eceff1',
 };
 
 export const dark = {
@@ -14,4 +16,6 @@ export const dark = {
 	thirdColor: '#2962ff',
 	lineColor: '#b0bec5',
 	hoverColor: '#82b1ff',
+	projBack: '#4b636e',
+	projText: '#eceff1',
 };

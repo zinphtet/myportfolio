@@ -106,12 +106,14 @@ const NavbarStyle = styled.div`
 			position: absolute;
 			top: 0;
 			right: -110%;
+			transform: scale(0);
 			/* background-color: rgba(0, 0, 0, 0.2); */
 			backdrop-filter: blur(0.2rem);
 			display: block;
+			/* display: none; */
 			width: 100%;
 			height: 100vh;
-			transition: all 0.2s linear;
+			transition: all 0.35s linear;
 
 			/* border: 1px solid blue; */
 			z-index: 100;
@@ -165,6 +167,8 @@ const NavbarStyle = styled.div`
 	}
 	.show {
 		right: 0;
-		transition: all 0.2s linear;
+		/* display: block; */
+		transform: scale(1);
+		transition: all 0.35 linear;
 	}
 `;
