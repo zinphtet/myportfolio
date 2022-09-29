@@ -14,7 +14,7 @@ import { FaGraduationCap } from 'react-icons/fa';
 import { TbNetwork } from 'react-icons/tb';
 const Technology = () => {
 	return (
-		<TechStyle className="section-3">
+		<TechStyle className="section-3" id="skills">
 			<div className="skills">
 				<div className="title">
 					<p>Skills & Experience</p>
@@ -114,6 +114,7 @@ const TechStyle = styled.div`
 			.year {
 				svg {
 					font-size: 3rem;
+					color: ${(props) => props.theme.thirdColor};
 				}
 			}
 			.exp_info {

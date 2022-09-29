@@ -1,5 +1,5 @@
 import GlobalStyle from '../styles/GlobalStyle';
-import '../styles/style.css'
+import '../styles/style.css';
 import { light, dark } from '../styles/theme';
 import { ThemeProvider } from 'styled-components';
 import { useEffect, useState } from 'react';
@@ -10,9 +10,7 @@ function MyApp({ Component, pageProps }) {
 		setDarkmode((prev) => !prev);
 		localStorage.setItem('darkmode', darkmode);
 	};
-	// useEffect(() => {
-	// 	console.log(darkmode);
-	// }, [darkmode]);
+
 	return (
 		<>
 			<ThemeProvider theme={darkmode ? dark : light}>

@@ -8,7 +8,10 @@ const GlobalStyle = createGlobalStyle`
      scroll-behavior: smooth;
      /* overflow-x: hidden; */
      /* overflow-y:hidden; */
-     overflow: auto;
+     /* overflow: auto; */
+     /* canvas{
+      overflow-x: hidden;
+     } */
      @media screen and (max-width : 56.25rem){
       font-size: 59.375%
      }
@@ -69,7 +72,7 @@ const GlobalStyle = createGlobalStyle`
     color:  ${(props) => props.theme.text};
     margin-bottom: 3rem;
     p{
-      font-size: 3rem;
+      font-size: 3.5rem;
       font-family: ${(props) => props.theme.titleFont};
       font-weight: 500;
       

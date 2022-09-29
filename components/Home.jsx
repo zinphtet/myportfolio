@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import {
+	AiFillFacebook,
+	AiFillLinkedin,
+	AiFillInstagram,
+} from 'react-icons/ai';
 const HomeBanner = () => {
 	return (
 		<HomeStyle className="section-2">
@@ -18,6 +22,11 @@ const HomeBanner = () => {
 			<a href="" className="downloadcv btn">
 				Resume
 			</a>
+			<div className="home_icons">
+				<AiFillFacebook />
+				<AiFillLinkedin />
+				<AiFillInstagram />
+			</div>
 		</HomeStyle>
 	);
 };
@@ -26,7 +35,7 @@ export default HomeBanner;
 
 const HomeStyle = styled.div`
 	/* border: 1px solid blue; */
-	padding-block: 6rem 12rem;
+	padding-block: 6rem 10rem;
 	color: ${(props) => props.theme.text};
 	@media screen and (max-width: 37.5rem) {
 		padding-block: 4rem 8rem;
@@ -83,5 +92,17 @@ const HomeStyle = styled.div`
 		font-size: 1.25rem;
 		cursor: pointer;
 		color: ${(props) => props.theme.text};
+	}
+	.home_icons {
+		/* border: 1px solid red; */
+		margin-top: 6rem;
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		svg {
+			font-size: 4rem;
+			cursor: pointer;
+			color: ${(props) => props.theme.thirdColor};
+		}
 	}
 `;

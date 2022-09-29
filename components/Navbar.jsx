@@ -32,10 +32,22 @@ const Navbar = ({ darkmode, darkmodeHandler }) => {
 						{' '}
 						<AiOutlineClose />{' '}
 					</li>
-					<li>.about()</li>
-					<li>.skills()</li>
-					<li>.projects()</li>
-					<li>.contact()</li>
+					<li>
+						{' '}
+						<a href="#about">.about()</a>{' '}
+					</li>
+					<li>
+						{' '}
+						<a href="#skills">.skills()</a>{' '}
+					</li>
+					<li>
+						{' '}
+						<a href="#projects">.projects()</a>{' '}
+					</li>
+					<li>
+						{' '}
+						<a href="#contact">.contact()</a>{' '}
+					</li>
 					<li onClick={darkmodeHandler}>
 						{darkmode ? <MdDarkMode /> : <BsFillSunFill />}
 					</li>
@@ -67,10 +79,10 @@ const NavbarStyle = styled.div`
 			position: relative;
 			width: 5rem;
 			height: 5rem;
-			border: 1px solid ${(props) => props.theme.text};
+			/* border: 1px solid ${(props) => props.theme.text}; */
 			border-radius: 50%;
 			overflow: hidden;
-			@media screen and (max-width: 56.25rem) {
+			/* @media screen and (max-width: 56.25rem) {
 				border: 1px solid red;
 			}
 			@media screen and (max-width: 37.5rem) {
@@ -78,7 +90,7 @@ const NavbarStyle = styled.div`
 			}
 			@media screen and (max-width: 25rem) {
 				border: 1px solid gold;
-			}
+			} */
 		}
 		p {
 			font-size: 3rem;
@@ -134,6 +146,7 @@ const NavbarStyle = styled.div`
 				right: 0;
 				width: 60%;
 				height: 100vh;
+
 				/* border: 1px solid red; */
 			}
 
@@ -146,9 +159,19 @@ const NavbarStyle = styled.div`
 				justify-content: center;
 				svg {
 					font-size: 3rem;
+					&:hover {
+						color: ${(props) => props.theme.thirdColor};
+					}
 				}
-				&:hover {
-					color: ${(props) => props.theme.thirdColor};
+
+				a {
+					color: ${(props) => props.theme.text};
+					&:hover {
+						color: ${(props) => props.theme.thirdColor};
+					}
+					@media screen and (max-width: 37.5rem) {
+						color: ${(props) => props.theme.background};
+					}
 				}
 			}
 			.close {

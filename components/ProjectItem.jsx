@@ -6,7 +6,7 @@ import projimg from '../imgs/proj.png';
 import Image from 'next/image';
 import TechItem from './TechItem';
 import { motion } from 'framer-motion';
-const ProjectItem = () => {
+const ProjectItem = ({ mytext }) => {
 	return (
 		<ProjectItemStyle
 			whileHover={{
@@ -27,7 +27,7 @@ const ProjectItem = () => {
 			</div>
 			<div className="info">
 				<p className="p_title">Capture </p>
-				<p className="p_info">This is the portolio site for photographer</p>
+				<p className="p_info">{mytext || 'portfolio site fro photographer'}</p>
 				<div className="techs">
 					<TechItem />
 					<TechItem />
@@ -45,16 +45,19 @@ const ProjectItem = () => {
 export default ProjectItem;
 
 const ProjectItemStyle = styled(motion.div)`
-	/* width: 45rem; */
-	/* height: 35rem; */
+	align-self: stretch;
+
 	border-radius: 0.5rem;
-	padding-bottom: 2rem;
-	display: flex;
-	flex-direction: column;
-	/* border: 1px solid red; */
+	padding-bottom: 4rem;
+
 	background-color: ${(props) => props.theme.projBack};
 	color: ${(props) => props.theme.projText};
-	gap: 2rem;
+
+	display: grid;
+	grid-gap: 1rem;
+	/* align-items: start;
+	align-content: stretch; */
+
 	.info {
 		padding-inline: 2rem;
 		display: flex;
@@ -65,7 +68,7 @@ const ProjectItemStyle = styled(motion.div)`
 			font-family: ${(props) => props.theme.titleFont};
 		}
 		.p_info {
-			font-size: 1.5rem;
+			font-size: 1.25rem;
 			line-height: 1.5;
 		}
 		.techs {

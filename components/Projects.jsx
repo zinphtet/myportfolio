@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ProjectItem from './ProjectItem';
 const Projects = () => {
 	return (
-		<ProjectsStyle className="section-2">
+		<ProjectsStyle className="section-2" id="projects">
 			<div className="title">
 				<p>Some Projects I've build </p>
 				<div className="line"></div>
@@ -35,8 +35,14 @@ const ProjectsStyle = styled.div`
 		gap: 4rem;
 		flex-wrap: wrap; */
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
-		grid-gap: 2.5rem;
+		grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+		grid-gap: 3rem;
+		@media screen and (max-width: 37.5rem) {
+			padding-inline: 2rem;
+		}
+		@media screen and (max-width: 25rem) {
+			padding-inline: 0rem;
+		}
 	}
 	.btn_div {
 		display: flex;

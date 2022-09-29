@@ -4,7 +4,7 @@ import Image from 'next/image';
 import myimg from '../imgs/main.jpg';
 const Aboutme = () => {
 	return (
-		<AboutmeStyle className="section-3">
+		<AboutmeStyle className="section-3" id="about">
 			<div className="about_info">
 				<div className="title">
 					<p>About Me</p>
