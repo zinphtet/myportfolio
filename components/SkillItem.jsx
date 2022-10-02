@@ -1,24 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import langImg from '../imgs/firebase.jpg';
-const SkillItem = ({ src, perc, name }) => {
+import { motion } from 'framer-motion';
+
+const SkillItem = ({ data }) => {
+	const { name, percentage, image } = data;
 	return (
-		<ItemStyle>
+		<ItemStyle
+			initial={{ opacity: 0 }}
+			whileInView={{ opacity: 1 }}
+			transition={{ duration: 3 }}
+			viewport={{ once: true }}
+		>
 			<div className="img">
 				<div className="img_container" style={{ position: 'relative' }}>
-					<Image src={src || langImg.src} layout="fill" alt="lan img" />
-					<div className="perc">{perc || '80'}%</div>
+					<Image
+						src={image?.data?.attributes?.formats?.thumbnail?.url}
+						layout="fill"
+						alt="lan img"
+					/>
+					<div className="perc">{percentage}%</div>
 				</div>
 			</div>
-			<p className="language">{name || 'Firebase'}</p>
+			<p className="language">{name}</p>
 		</ItemStyle>
 	);
 };
 
 export default SkillItem;
 
-const ItemStyle = styled.div`
+const ItemStyle = styled(motion.div)`
 	width: 10rem;
 	height: 10rem;
 	/* border: 1px solid blue; */

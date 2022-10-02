@@ -5,35 +5,52 @@ import {
 	AiFillLinkedin,
 	AiFillInstagram,
 } from 'react-icons/ai';
+import { motion } from 'framer-motion';
+import { homeParent, fadeInParent, toUp } from '../lib/animate';
 const HomeBanner = () => {
 	return (
-		<HomeStyle className="section-2">
+		<HomeStyle
+			className="section-2"
+			variants={homeParent}
+			initial="initial"
+			animate="animate"
+		>
 			<div className="home_info">
-				<p className="hi">Hi , My name is</p>
-				<p className="name">Zin Paing Htet .</p>
-				<p className="build">
+				<motion.p className="hi" variants={toUp}>
+					Hi , My name is
+				</motion.p>
+				<motion.p className="name" variants={toUp}>
+					Zin Paing Htet.
+				</motion.p>
+				<motion.p className="build" variants={toUp}>
 					I build <span>apps</span> for the <span>web</span>{' '}
-				</p>
-				<p className="info">
+				</motion.p>
+				<motion.p className="info" variants={toUp}>
 					I am frontend developer specializing <span>React</span> and{' '}
 					<span>Nextjs</span> .
-				</p>
+				</motion.p>
 			</div>
-			<a href="" className="downloadcv btn">
+			<motion.a href="" className="downloadcv btn" variants={toUp}>
 				Resume
-			</a>
-			<div className="home_icons">
-				<AiFillFacebook />
-				<AiFillLinkedin />
-				<AiFillInstagram />
-			</div>
+			</motion.a>
+			<motion.div className="home_icons" variants={toUp}>
+				<a href="https://www.facebook.com" target="_blank">
+					<AiFillFacebook />
+				</a>
+				<a href="https://www.linkedin.com" target="_blank">
+					<AiFillLinkedin />
+				</a>
+				<a href="https://www.instagram.com" target="_blank">
+					<AiFillInstagram />
+				</a>
+			</motion.div>
 		</HomeStyle>
 	);
 };
 
 export default HomeBanner;
 
-const HomeStyle = styled.div`
+const HomeStyle = styled(motion.div)`
 	/* border: 1px solid blue; */
 	padding-block: 6rem 10rem;
 	color: ${(props) => props.theme.text};

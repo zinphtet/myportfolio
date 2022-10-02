@@ -6,6 +6,8 @@ import { BiMenuAltRight } from 'react-icons/bi';
 import { AiOutlineClose } from 'react-icons/ai';
 import Image from 'next/image';
 import boyimg from '../imgs/boy.png';
+import { motion } from 'framer-motion';
+import { fadeInParent, fadeIn } from '../lib/animate';
 const Navbar = ({ darkmode, darkmodeHandler }) => {
 	const [show, setShow] = useState(false);
 	useEffect(() => {
@@ -16,8 +18,18 @@ const Navbar = ({ darkmode, darkmodeHandler }) => {
 		}
 		return () => {};
 	}, [show]);
+	const overflowHandle = () => {
+		document.body.classList.remove('hide');
+		setShow(false);
+	};
 	return (
-		<NavbarStyle className="section">
+		<NavbarStyle
+			className="section"
+			variants={fadeInParent}
+			initial="initial"
+			animate="animate"
+			transition={{ delay: 5 }}
+		>
 			<div className="logo">
 				<div className="img_container">
 					<Image src={boyimg.src} layout="fill" />
@@ -28,29 +40,45 @@ const Navbar = ({ darkmode, darkmodeHandler }) => {
 			</div>
 			<div className={`nav ${show ? 'show' : ''}`}>
 				<ul>
-					<li className="close" onClick={() => setShow(false)}>
+					<motion.li
+						className="close"
+						onClick={() => setShow(false)}
+						variants={fadeIn}
+					>
 						{' '}
 						<AiOutlineClose />{' '}
-					</li>
-					<li>
+					</motion.li>
+					<motion.li variants={fadeIn}>
 						{' '}
-						<a href="#about">.about()</a>{' '}
-					</li>
-					<li>
+						<a href="#about" onClick={overflowHandle}>
+							.about()
+						</a>{' '}
+					</motion.li>
+					<motion.li variants={fadeIn}>
 						{' '}
-						<a href="#skills">.skills()</a>{' '}
-					</li>
-					<li>
+						<a href="#skills" onClick={overflowHandle}>
+							.skills()
+						</a>{' '}
+					</motion.li>
+					<motion.li variants={fadeIn}>
 						{' '}
-						<a href="#projects">.projects()</a>{' '}
-					</li>
-					<li>
+						<a href="#projects" onClick={overflowHandle}>
+							.projects()
+						</a>{' '}
+					</motion.li>
+					<motion.li variants={fadeIn}>
 						{' '}
-						<a href="#contact">.contact()</a>{' '}
-					</li>
-					<li onClick={darkmodeHandler}>
-						{darkmode ? <MdDarkMode /> : <BsFillSunFill />}
-					</li>
+						<a href="#contact" onClick={overflowHandle}>
+							.contact()
+						</a>{' '}
+					</motion.li>
+					<motion.li onClick={darkmodeHandler} variants={fadeIn}>
+						{darkmode ? (
+							<MdDarkMode onClick={overflowHandle} />
+						) : (
+							<BsFillSunFill onClick={overflowHandle} />
+						)}
+					</motion.li>
 				</ul>
 			</div>
 		</NavbarStyle>
@@ -59,7 +87,7 @@ const Navbar = ({ darkmode, darkmodeHandler }) => {
 
 export default Navbar;
 
-const NavbarStyle = styled.div`
+const NavbarStyle = styled(motion.div)`
 	/* border: 1px solid goldenrod; */
 	display: flex;
 	align-items: center;

@@ -19,9 +19,9 @@ const GlobalStyle = createGlobalStyle`
       font-size: 56.25%
      }
    }
-   ::-webkit-scrollbar{
+   /* ::-webkit-scrollbar{
     width: 0;
-   }
+   } */
    body{
     background-color: ${({ theme: { background } }) => background};
     overflow-x: hidden;

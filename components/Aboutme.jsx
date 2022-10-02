@@ -2,36 +2,61 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import myimg from '../imgs/main.jpg';
+import { motion } from 'framer-motion';
 const Aboutme = () => {
 	return (
 		<AboutmeStyle className="section-3" id="about">
 			<div className="about_info">
-				<div className="title">
+				<motion.div
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					transition={{ duration: 2 }}
+					viewport={{ once: true }}
+					className="title"
+				>
 					<p>About Me</p>
 					<div className="line"></div>
-				</div>
-				<p className="my_info">
+				</motion.div>
+				<motion.p
+					className="my_info"
+					initial={{ opacity: 0, x: -50 }}
+					whileInView={{ x: 0, opacity: 1 }}
+					transition={{ duration: 1 }}
+					viewport={{ once: true }}
+				>
 					Hello ! I am <span>Zin Paing Htet </span>, frontend developer.I enjoy
 					creating web apps using <span>React</span> , <span>NextJs</span> and{' '}
 					<span>Strapi</span>.I am not from Computer Science field.But I am
 					willing to learn Computer Science and Programming, and I love it.I am
 					studying web development for 2 years and still learning.I am currently
 					live in Yangon,Myanmar.
-				</p>
-				<p className="my_info">
+				</motion.p>
+				<motion.p
+					className="my_info"
+					initial={{ opacity: 0, x: -70 }}
+					whileInView={{ x: 0, opacity: 1 }}
+					transition={{ duration: 1 }}
+					viewport={{ once: true }}
+				>
 					Hello ! I am <span>Zin Paing Htet</span> , frontend developer.I enjoy
 					creating web apps using <span>React</span> , <span>NextJs</span> and{' '}
 					<span>Strapi</span>.I am not from Computer Science field.But I am
 					willing to learn Computer Science and Programming, and I love it.I am
 					studying web development for 2 years and still learning.I am currently
 					live in Yangon,Myanmar.
-				</p>
+				</motion.p>
 			</div>
-			<div className="img">
+			<motion.div
+				className="img"
+				initial={{ opacity: 0, x: 70 }}
+				whileInView={{ x: 0, opacity: 1 }}
+				transition={{ duration: 1 }}
+				viewport={{ once: true, amount: 0.5 }}
+			>
 				<div className="img_container" style={{ position: 'relative' }}>
 					<Image src={myimg.src} layout="fill" alt="about me img" />
 				</div>
-			</div>
+			</motion.div>
 		</AboutmeStyle>
 	);
 };

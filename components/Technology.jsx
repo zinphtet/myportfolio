@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import SkillItem from './SkillItem';
 import hasura from '../imgs/hasura.jpg';
@@ -12,29 +12,42 @@ import html from '../imgs/html.jpg';
 import redux from '../imgs/redux.png';
 import { FaGraduationCap } from 'react-icons/fa';
 import { TbNetwork } from 'react-icons/tb';
-const Technology = () => {
+import { useQuery } from '@apollo/client';
+import { GET_SKILLS } from '../lib/query';
+import { motion } from 'framer-motion';
+
+export default function Technology() {
+	const { data, loading, error } = useQuery(GET_SKILLS);
+	if (loading) return <div>Loading ...</div>;
+	if (error) return <div>Error ...</div>;
+	const dataArr = data.skills.data;
 	return (
 		<TechStyle className="section-3" id="skills">
 			<div className="skills">
-				<div className="title">
+				<motion.div
+					className="title"
+					initial={{ opacity: 0, x: -70 }}
+					whileInView={{ x: 0, opacity: 1 }}
+					transition={{ duration: 1 }}
+					viewport={{ once: true }}
+				>
 					<p>Skills & Experience</p>
 					<div className="line"></div>
-				</div>
-				<div className="skills_container">
-					<SkillItem src={html.src} perc={90} name="HTML" />
-					<SkillItem src={css.src} perc={85} name="Css" />
-					<SkillItem src={sass.src} perc={70} name="Sass" />
-					<SkillItem src={js.src} perc={90} name="Javascript" />
-					<SkillItem src={react.src} perc={85} name="React" />
-					<SkillItem src={next.src} perc={70} name="NextJs" />
-					<SkillItem src={strapi.src} perc={65} name="Strapi" />
-					<SkillItem />
-					<SkillItem src={redux.src} perc={70} name="Redux" />
-					<SkillItem src={hasura.src} perc={60} name="Hasura" />
-				</div>
+				</motion.div>
+				<motion.div className="skills_container">
+					{dataArr.map(({ id, attributes }) => (
+						<SkillItem key={id} data={attributes} />
+					))}
+				</motion.div>
 			</div>
 			<div className="experience">
-				<div className="exp">
+				<motion.div
+					className="exp"
+					initial={{ opacity: 0, x: 70 }}
+					whileInView={{ x: 0, opacity: 1 }}
+					transition={{ duration: 1 }}
+					viewport={{ once: true }}
+				>
 					<div className="year">
 						<div>
 							<FaGraduationCap />{' '}
@@ -45,8 +58,15 @@ const Technology = () => {
 						Studied <span>Electronics Engineering</span> at Mandalay
 						Technological University (MTU)
 					</div>
-				</div>
-				<div className="exp">
+				</motion.div>
+
+				<motion.div
+					className="exp"
+					initial={{ opacity: 0, x: 70 }}
+					whileInView={{ x: 0, opacity: 1 }}
+					transition={{ duration: 1 }}
+					viewport={{ once: true }}
+				>
 					<div className="year">
 						<div>
 							<TbNetwork />{' '}
@@ -56,13 +76,11 @@ const Technology = () => {
 					<div className="exp_info">
 						Learning <span>Web Development</span> through internet
 					</div>
-				</div>
+				</motion.div>
 			</div>
 		</TechStyle>
 	);
-};
-
-export default Technology;
+}
 
 const TechStyle = styled.div`
 	/* border: 1px solid red; */

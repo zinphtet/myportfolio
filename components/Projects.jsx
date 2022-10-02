@@ -1,24 +1,53 @@
 import React from 'react';
 import styled from 'styled-components';
 import ProjectItem from './ProjectItem';
+import { useQuery } from '@apollo/client';
+import { GET_PROJECTS } from '../lib/query';
+import { motion } from 'framer-motion';
 const Projects = () => {
+	const { data, loading, error } = useQuery(GET_PROJECTS);
+	if (loading) return <div>Loading ...</div>;
+	if (error) return <div>Error ...</div>;
+	console.log(data.projects.data);
+	const dataArr = data.projects.data;
 	return (
 		<ProjectsStyle className="section-2" id="projects">
-			<div className="title">
+			<motion.div
+				className="title"
+				initial={{ opacity: 0, x: -70 }}
+				whileInView={{ x: 0, opacity: 1 }}
+				transition={{ duration: 1 }}
+				viewport={{ once: true }}
+			>
 				<p>Some Projects I've build </p>
 				<div className="line"></div>
-			</div>
-			<div className="projects_container">
-				<ProjectItem />
-				<ProjectItem />
-				<ProjectItem />
-				<ProjectItem />
-				<ProjectItem />
-				<ProjectItem />
-			</div>
-			<div className="btn_div">
+			</motion.div>
+			<motion.div
+				className="projects_container"
+				// initial="initial"
+				// whileInView="animate"
+				// viewport={{ once: true, amount: 0.3 }}
+				// transition={{ staggerChildren: 0.5 }}
+			>
+				{dataArr.map(({ id, attributes }) => (
+					<ProjectItem key={id} data={attributes} />
+				))}
+				<ProjectItem data={{ nothing: 1 }} />
+				<ProjectItem data={{ nothing: 1 }} />
+				<ProjectItem data={{ nothing: 1 }} />
+			</motion.div>
+			<motion.div
+				className="btn_div"
+				initial={{ opacity: 0, y: 70 }}
+				whileInView={{
+					opacity: 1,
+					y: 0,
+				}}
+				transition={{ duration: 1 }}
+				viewport={{ once: true, amount: 0.5 }}
+			>
 				<button className="btn">Show More</button>
-			</div>
+			</motion.div>
 		</ProjectsStyle>
 	);
 };

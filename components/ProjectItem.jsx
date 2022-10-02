@@ -6,18 +6,26 @@ import projimg from '../imgs/proj.png';
 import Image from 'next/image';
 import TechItem from './TechItem';
 import { motion } from 'framer-motion';
-const ProjectItem = ({ mytext }) => {
+import { fadeIn, projItem } from '../lib/animate';
+const ProjectItem = ({ data }) => {
+	const { title, desc, demo_link, github_link, image, techs } = data;
+	const main_img = image?.data?.attributes?.formats.small?.url;
+	// console.log(github_link);
 	return (
 		<ProjectItemStyle
 			whileHover={{
 				y: -6,
 				transition: { duration: 0.2 },
 			}}
+			variants={projItem}
+			initial="initial"
+			whileInView="animate"
+			viewport={{ once: true, amount: 0.5 }}
 		>
 			<div className="img">
 				<div className="img_container" style={{ position: 'relative' }}>
 					<Image
-						src={projimg.src}
+						src={main_img || projimg.src}
 						alt="proj img"
 						layout="responsive"
 						width={10}
@@ -26,17 +34,21 @@ const ProjectItem = ({ mytext }) => {
 				</div>
 			</div>
 			<div className="info">
-				<p className="p_title">Capture </p>
-				<p className="p_info">{mytext || 'portfolio site fro photographer'}</p>
+				<p className="p_title">{title || 'My App '} </p>
+				<p className="p_info">{desc || 'The best app for developer'}</p>
 				<div className="techs">
-					<TechItem />
-					<TechItem />
-					<TechItem />
+					{techs?.data?.map(({ attributes }, idx) => (
+						<TechItem key={idx} data={attributes} />
+					))}
 				</div>
 			</div>
 			<div className="icons">
-				<AiOutlineGithub />
-				<FiExternalLink />
+				<a href={github_link || 'nothiong'} target="_blank">
+					<AiOutlineGithub />
+				</a>
+				<a href={demo_link || 'noting'} target="_blank">
+					<FiExternalLink />
+				</a>
 			</div>
 		</ProjectItemStyle>
 	);
@@ -46,7 +58,7 @@ export default ProjectItem;
 
 const ProjectItemStyle = styled(motion.div)`
 	align-self: stretch;
-
+	cursor: pointer;
 	border-radius: 0.5rem;
 	padding-bottom: 4rem;
 
@@ -62,9 +74,9 @@ const ProjectItemStyle = styled(motion.div)`
 		padding-inline: 2rem;
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+		gap: 1.5rem;
 		.p_title {
-			font-size: 3rem;
+			font-size: 2.5rem;
 			font-family: ${(props) => props.theme.titleFont};
 		}
 		.p_info {
@@ -91,6 +103,7 @@ const ProjectItemStyle = styled(motion.div)`
 		justify-content: flex-end;
 		svg {
 			font-size: 2.5rem;
+			color: ${(props) => props.theme.projText};
 			cursor: pointer;
 		}
 	}

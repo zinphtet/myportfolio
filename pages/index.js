@@ -6,20 +6,11 @@ import Technology from '../components/Technology';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-export default function Home() {
-	// useEffect(() => {
-	// 	console.log(document.getElementsByTagName('canvas'));
-	// 	const canvas = Array.from(document.getElementsByTagName('canvas'));
-	// 	console.log([...canvas]);
-	// 	console.log(window);
-	// 	const mycanvas = [...canvas][0];
-	// 	if (mycanvas) {
-	// 		console.log(mycanvas);
-	// 		mycanvas.style.width = window.innerWidth;
-	// 		mycanvas.style.overflowX = 'hidden';
-	// 	}
-	// }, []);
 
+
+
+export default function Home(props) {
+	// console.log(props.skills.data[0].attributes.image);
 	return (
 		<>
 			<Head>

@@ -4,20 +4,28 @@ import { light, dark } from '../styles/theme';
 import { ThemeProvider } from 'styled-components';
 import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+
+const client = new ApolloClient({
+	uri: 'http://localhost:1337/graphql',
+	cache: new InMemoryCache(),
+});
+
 function MyApp({ Component, pageProps }) {
 	const [darkmode, setDarkmode] = useState(false);
 	const handleDarkMode = () => {
 		setDarkmode((prev) => !prev);
-		localStorage.setItem('darkmode', darkmode);
 	};
 
 	return (
 		<>
-			<ThemeProvider theme={darkmode ? dark : light}>
-				<GlobalStyle />
-				<Navbar darkmode={darkmode} darkmodeHandler={handleDarkMode} />
-				<Component {...pageProps} />
-			</ThemeProvider>
+			<ApolloProvider client={client}>
+				<ThemeProvider theme={darkmode ? dark : light}>
+					<GlobalStyle />
+					<Navbar darkmode={darkmode} darkmodeHandler={handleDarkMode} />
+					<Component {...pageProps} />
+				</ThemeProvider>
+			</ApolloProvider>
 		</>
 	);
 }

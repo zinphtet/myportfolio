@@ -1,28 +1,75 @@
 import React from 'react';
 import styled from 'styled-components';
 import { AiOutlinePhone, AiOutlineMail } from 'react-icons/ai';
+import { motion } from 'framer-motion';
 const Contact = () => {
 	return (
 		<ContactStyle className="section-3" id="contact">
-			<p className="contact_title">Get In Touch</p>
+			<motion.p
+				className="contact_title"
+				initial={{ opacity: 0, y: 70 }}
+				whileInView={{
+					opacity: 1,
+					y: 0,
+				}}
+				transition={{ duration: 1 }}
+				viewport={{ once: true, amount: 0.5 }}
+			>
+				Get In Touch
+			</motion.p>
 			<div className="contact">
-				<div className="phone">
+				<motion.div
+					className="phone"
+					initial={{ opacity: 0, x: -70 }}
+					whileInView={{
+						opacity: 1,
+						x: 0,
+					}}
+					transition={{ duration: 1 }}
+					viewport={{ once: true, amount: 0.5 }}
+				>
 					<AiOutlinePhone /> <a href="tel:09774083439"> 09774083439 </a>
-				</div>
-				<div className="email">
+				</motion.div>
+				<motion.div
+					className="email"
+					initial={{ opacity: 0, x: 70 }}
+					whileInView={{
+						opacity: 1,
+						x: 0,
+					}}
+					transition={{ duration: 1 }}
+					viewport={{ once: true, amount: 0.5 }}
+				>
 					<AiOutlineMail /> <p>zinpainghtet.215108@gmail.com</p>
-				</div>
+				</motion.div>
 			</div>
-			<p className="opport">
+			<motion.p
+				className="opport"
+				initial={{ opacity: 0, y: 70 }}
+				whileInView={{
+					opacity: 1,
+					y: 0,
+				}}
+				transition={{ duration: 1 }}
+				viewport={{ once: true, amount: 0.5 }}
+			>
 				I am looking for <span>new opportunities</span> . My inbox is always
 				open .Whether you want to ask question or just want to say hi , I'll try
 				my best to get back to you!
-			</p>
-			<div>
+			</motion.p>
+			<motion.div
+				initial={{ opacity: 0, y: 70 }}
+				whileInView={{
+					opacity: 1,
+					y: 0,
+				}}
+				transition={{ duration: 1 }}
+				viewport={{ once: true, amount: 0.5 }}
+			>
 				<a href="mailto:zinpainghtet.215108@gmail.com">
 					<button>Say Hello</button>
 				</a>
-			</div>
+			</motion.div>
 		</ContactStyle>
 	);
 };
