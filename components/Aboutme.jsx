@@ -19,31 +19,41 @@ const Aboutme = () => {
 				</motion.div>
 				<motion.p
 					className="my_info"
-					initial={{ opacity: 0, x: -50 }}
+					initial={{ opacity: 0, x: -70 }}
 					whileInView={{ x: 0, opacity: 1 }}
 					transition={{ duration: 1 }}
-					viewport={{ once: true }}
+					viewport={{ once: true, amount: 0.5 }}
 				>
-					Hello ! I am <span>Zin Paing Htet </span>, frontend developer.I enjoy
-					creating web apps using <span>React</span> , <span>NextJs</span> and{' '}
-					<span>Strapi</span>.I am not from Computer Science field.But I am
-					willing to learn Computer Science and Programming, and I love it.I am
-					studying web development for 2 years and still learning.I am currently
-					live in Yangon,Myanmar.
+					Hello , I am <span>Zin Paing Htet</span> . I am frontend developer
+					specializing <span>React and NextJs</span> . I am learning Web
+					Development for 2 years . During COVID-19 , I wanted to learn new
+					skills . So I learned Web development. Now I am really love this. I
+					love creating Web apps using React and NextJs.
 				</motion.p>
 				<motion.p
 					className="my_info"
 					initial={{ opacity: 0, x: -70 }}
 					whileInView={{ x: 0, opacity: 1 }}
 					transition={{ duration: 1 }}
-					viewport={{ once: true }}
+					viewport={{ once: true, amount: 0.5 }}
 				>
-					Hello ! I am <span>Zin Paing Htet</span> , frontend developer.I enjoy
-					creating web apps using <span>React</span> , <span>NextJs</span> and{' '}
-					<span>Strapi</span>.I am not from Computer Science field.But I am
-					willing to learn Computer Science and Programming, and I love it.I am
-					studying web development for 2 years and still learning.I am currently
-					live in Yangon,Myanmar.
+					I am 4th year student at{' '}
+					<span> Mandalay Technological University (MTU) </span>. Because of the
+					coup happening in our country , I am not able to join my
+					university.Although I am not CS student , I am interested in{' '}
+					<span>Computer Science</span> and related technologies.
+				</motion.p>
+				<motion.p
+					className="my_info"
+					initial={{ opacity: 0, x: -70 }}
+					whileInView={{ x: 0, opacity: 1 }}
+					transition={{ duration: 1 }}
+					viewport={{ once: true, amount: 0.5 }}
+				>
+					Now I am <span>looking for</span> new role as{' '}
+					<span>junior developer , intern </span> or something.If you want to
+					hire or help me , you can contact <span>my number or via email</span>{' '}
+					.
 				</motion.p>
 			</div>
 			<motion.div
@@ -53,9 +63,13 @@ const Aboutme = () => {
 				transition={{ duration: 1 }}
 				viewport={{ once: true, amount: 0.5 }}
 			>
-				<div className="img_container" style={{ position: 'relative' }}>
+				<motion.div
+					className="img_container"
+					style={{ position: 'relative' }}
+					whileHover={{ scale: 1.05 }}
+				>
 					<Image src={myimg.src} layout="fill" alt="about me img" />
-				</div>
+				</motion.div>
 			</motion.div>
 		</AboutmeStyle>
 	);
@@ -65,7 +79,7 @@ export default Aboutme;
 
 const AboutmeStyle = styled.div`
 	padding-block: 8rem;
-	/* border: 1px solid blue; */
+
 	color: ${(props) => props.theme.text};
 	display: flex;
 	gap: 4rem;
@@ -74,13 +88,13 @@ const AboutmeStyle = styled.div`
 	}
 	& > * {
 		flex: 1;
-		/* border: 1px solid red; */
 	}
 	.about_info {
 		.my_info {
 			padding-block: 1rem;
 			font-size: 1.75rem;
 			line-height: 1.75;
+			text-align: justify;
 		}
 	}
 	.img {

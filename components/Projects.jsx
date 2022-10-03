@@ -24,10 +24,6 @@ const Projects = () => {
 			</motion.div>
 			<motion.div
 				className="projects_container"
-				// initial="initial"
-				// whileInView="animate"
-				// viewport={{ once: true, amount: 0.3 }}
-				// transition={{ staggerChildren: 0.5 }}
 			>
 				{dataArr.map(({ id, attributes }) => (
 					<ProjectItem key={id} data={attributes} />
@@ -59,10 +55,6 @@ const ProjectsStyle = styled.div`
 
 	.projects_container {
 		padding-block: 4rem;
-		/* justify-content: center;
-		display: flex;
-		gap: 4rem;
-		flex-wrap: wrap; */
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
 		grid-gap: 3rem;

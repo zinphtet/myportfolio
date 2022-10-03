@@ -6,7 +6,7 @@ import {
 	AiFillInstagram,
 } from 'react-icons/ai';
 import { motion } from 'framer-motion';
-import { homeParent, fadeInParent, toUp } from '../lib/animate';
+import { homeParent, toUp } from '../lib/animate';
 const HomeBanner = () => {
 	return (
 		<HomeStyle
@@ -34,15 +34,27 @@ const HomeBanner = () => {
 				Resume
 			</motion.a>
 			<motion.div className="home_icons" variants={toUp}>
-				<a href="https://www.facebook.com" target="_blank">
+				<motion.a
+					href="https://www.facebook.com"
+					target="_blank"
+					whileHover={{ y: -2 }}
+				>
 					<AiFillFacebook />
-				</a>
-				<a href="https://www.linkedin.com" target="_blank">
+				</motion.a>
+				<motion.a
+					href="https://www.linkedin.com"
+					target="_blank"
+					whileHover={{ y: -2 }}
+				>
 					<AiFillLinkedin />
-				</a>
-				<a href="https://www.instagram.com" target="_blank">
+				</motion.a>
+				<motion.a
+					href="https://www.instagram.com"
+					target="_blank"
+					whileHover={{ y: -2 }}
+				>
 					<AiFillInstagram />
-				</a>
+				</motion.a>
 			</motion.div>
 		</HomeStyle>
 	);
@@ -51,7 +63,7 @@ const HomeBanner = () => {
 export default HomeBanner;
 
 const HomeStyle = styled(motion.div)`
-	/* border: 1px solid blue; */
+
 	padding-block: 6rem 10rem;
 	color: ${(props) => props.theme.text};
 	@media screen and (max-width: 37.5rem) {
@@ -111,7 +123,7 @@ const HomeStyle = styled(motion.div)`
 		color: ${(props) => props.theme.text};
 	}
 	.home_icons {
-		/* border: 1px solid red; */
+		
 		margin-top: 6rem;
 		display: flex;
 		align-items: center;

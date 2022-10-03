@@ -88,16 +88,19 @@ const Navbar = ({ darkmode, darkmodeHandler }) => {
 export default Navbar;
 
 const NavbarStyle = styled(motion.div)`
-	/* border: 1px solid goldenrod; */
+
 	display: flex;
 	align-items: center;
 	padding-block: 2.5rem;
 	font-family: ${({ theme: { titleFont } }) => titleFont};
-	/* border-bottom: 1px solid red; */
-	/* position: relative; */
+
 
 	overflow-x: hidden;
 	color: ${(props) => props.theme.text};
+
+	@media screen and (max-width: 37.5rem) {
+		box-shadow: 0.2rem 0.2rem 0.2rem gray;
+	}
 
 	.logo {
 		flex: 1;
@@ -107,18 +110,10 @@ const NavbarStyle = styled(motion.div)`
 			position: relative;
 			width: 5rem;
 			height: 5rem;
-			/* border: 1px solid ${(props) => props.theme.text}; */
+		
 			border-radius: 50%;
 			overflow: hidden;
-			/* @media screen and (max-width: 56.25rem) {
-				border: 1px solid red;
-			}
-			@media screen and (max-width: 37.5rem) {
-				border: 1px solid green;
-			}
-			@media screen and (max-width: 25rem) {
-				border: 1px solid gold;
-			} */
+			
 		}
 		p {
 			font-size: 3rem;
@@ -147,15 +142,15 @@ const NavbarStyle = styled(motion.div)`
 			top: 0;
 			right: -110%;
 			transform: scale(0);
-			/* background-color: rgba(0, 0, 0, 0.2); */
+			
 			backdrop-filter: blur(0.2rem);
 			display: block;
-			/* display: none; */
+		
 			width: 100%;
 			height: 100vh;
 			transition: all 0.35s linear;
 
-			/* border: 1px solid blue; */
+			
 			z-index: 100;
 		}
 		ul {
@@ -175,11 +170,11 @@ const NavbarStyle = styled(motion.div)`
 				width: 60%;
 				height: 100vh;
 
-				/* border: 1px solid red; */
+			
 			}
 
 			li {
-				/* border: 1px solid blue; */
+			
 				font-size: 2rem;
 				cursor: pointer;
 				display: flex;
@@ -218,7 +213,7 @@ const NavbarStyle = styled(motion.div)`
 	}
 	.show {
 		right: 0;
-		/* display: block; */
+
 		transform: scale(1);
 		transition: all 0.35 linear;
 	}

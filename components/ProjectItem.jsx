@@ -6,11 +6,10 @@ import projimg from '../imgs/proj.png';
 import Image from 'next/image';
 import TechItem from './TechItem';
 import { motion } from 'framer-motion';
-import { fadeIn, projItem } from '../lib/animate';
+import {  projItem } from '../lib/animate';
 const ProjectItem = ({ data }) => {
 	const { title, desc, demo_link, github_link, image, techs } = data;
 	const main_img = image?.data?.attributes?.formats.small?.url;
-	// console.log(github_link);
 	return (
 		<ProjectItemStyle
 			whileHover={{
@@ -67,8 +66,6 @@ const ProjectItemStyle = styled(motion.div)`
 
 	display: grid;
 	grid-gap: 1rem;
-	/* align-items: start;
-	align-content: stretch; */
 
 	.info {
 		padding-inline: 2rem;
@@ -91,9 +88,8 @@ const ProjectItemStyle = styled(motion.div)`
 	.img {
 		width: 100%;
 		.img_container {
-			/* border: 1px solid blue; */
-			width: 100%;
-			/* height: 20rem; */
+
+			width: 100%;	
 		}
 	}
 	.icons {

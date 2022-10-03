@@ -32,7 +32,6 @@ export default SkillItem;
 const ItemStyle = styled(motion.div)`
 	width: 10rem;
 	height: 10rem;
-	/* border: 1px solid blue; */
 	color: ${(props) => props.theme.text};
 	display: flex;
 	flex-direction: column;
@@ -48,7 +47,6 @@ const ItemStyle = styled(motion.div)`
 			position: relative;
 			.perc {
 				position: absolute;
-				/* display: none; */
 				width: 100%;
 				height: 100%;
 				background-color: ${(props) => props.theme.hoverColor};

@@ -6,12 +6,7 @@ const GlobalStyle = createGlobalStyle`
      line-height: 1.05;
      font-family: 'Poppins', sans-serif;
      scroll-behavior: smooth;
-     /* overflow-x: hidden; */
-     /* overflow-y:hidden; */
-     /* overflow: auto; */
-     /* canvas{
-      overflow-x: hidden;
-     } */
+    
      @media screen and (max-width : 56.25rem){
       font-size: 59.375%
      }
@@ -19,15 +14,15 @@ const GlobalStyle = createGlobalStyle`
       font-size: 56.25%
      }
    }
-   /* ::-webkit-scrollbar{
+   ::-webkit-scrollbar{
     width: 0;
-   } */
+   }
    body{
     background-color: ${({ theme: { background } }) => background};
     overflow-x: hidden;
     transition: all .5s linear;
     backface-visibility: hidden;
-    /* border: 1px solid green; */
+
    }
    
    .hide{
@@ -48,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
   .section{
      max-width: 120rem;
      margin: 0 auto;
-     /* border: 1px solid red; */
+
      padding-inline: 4rem;
   }
   .section-2{

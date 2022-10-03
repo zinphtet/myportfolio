@@ -17,7 +17,6 @@ const FooterStyle = styled.div`
 	p {
 		font-size: 1.25rem;
 		text-align: center;
-		/* font-style: italic; */
 		font-family: ${(props) => props.theme.titleFont};
 	}
 `;

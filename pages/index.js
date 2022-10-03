@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useEffect } from 'react';
+
 import HomeBanner from '../components/Home';
 import Aboutme from '../components/Aboutme';
 import Technology from '../components/Technology';
@@ -7,10 +7,7 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
-
-
-export default function Home(props) {
-	// console.log(props.skills.data[0].attributes.image);
+export default function Home() {
 	return (
 		<>
 			<Head>
