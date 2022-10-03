@@ -14,6 +14,7 @@ const HomeBanner = () => {
 			variants={homeParent}
 			initial="initial"
 			animate="animate"
+			id="home"
 		>
 			<div className="home_info">
 				<motion.p className="hi" variants={toUp}>
@@ -63,7 +64,6 @@ const HomeBanner = () => {
 export default HomeBanner;
 
 const HomeStyle = styled(motion.div)`
-
 	padding-block: 6rem 10rem;
 	color: ${(props) => props.theme.text};
 	@media screen and (max-width: 37.5rem) {
@@ -123,7 +123,6 @@ const HomeStyle = styled(motion.div)`
 		color: ${(props) => props.theme.text};
 	}
 	.home_icons {
-		
 		margin-top: 6rem;
 		display: flex;
 		align-items: center;

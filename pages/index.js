@@ -1,13 +1,26 @@
 import Head from 'next/head';
-
+import { useEffect, useState } from 'react';
 import HomeBanner from '../components/Home';
 import Aboutme from '../components/Aboutme';
 import Technology from '../components/Technology';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-
+import Arrow from '../components/Arrow';
 export default function Home() {
+	const [showArr, setShowArr] = useState(false);
+	useEffect(() => {
+		window.addEventListener('scroll', function () {
+			if (!(this.scrollY > 300)) {
+				if (!showArr) return;
+				setShowArr(false);
+				return;
+			}
+			if (showArr) return;
+			setShowArr(true);
+		});
+	}, []);
+
 	return (
 		<>
 			<Head>
@@ -22,6 +35,7 @@ export default function Home() {
 			<Projects />
 			<Contact />
 			<Footer />
+			{showArr && <Arrow />}
 		</>
 	);
 }

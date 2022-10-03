@@ -29,6 +29,7 @@ const Navbar = ({ darkmode, darkmodeHandler }) => {
 			initial="initial"
 			animate="animate"
 			transition={{ delay: 5 }}
+			id="navbar"
 		>
 			<div className="logo">
 				<div className="img_container">
@@ -88,12 +89,10 @@ const Navbar = ({ darkmode, darkmodeHandler }) => {
 export default Navbar;
 
 const NavbarStyle = styled(motion.div)`
-
 	display: flex;
 	align-items: center;
 	padding-block: 2.5rem;
 	font-family: ${({ theme: { titleFont } }) => titleFont};
-
 
 	overflow-x: hidden;
 	color: ${(props) => props.theme.text};
@@ -110,10 +109,9 @@ const NavbarStyle = styled(motion.div)`
 			position: relative;
 			width: 5rem;
 			height: 5rem;
-		
+
 			border-radius: 50%;
 			overflow: hidden;
-			
 		}
 		p {
 			font-size: 3rem;
@@ -142,15 +140,14 @@ const NavbarStyle = styled(motion.div)`
 			top: 0;
 			right: -110%;
 			transform: scale(0);
-			
+
 			backdrop-filter: blur(0.2rem);
 			display: block;
-		
+
 			width: 100%;
 			height: 100vh;
 			transition: all 0.35s linear;
 
-			
 			z-index: 100;
 		}
 		ul {
@@ -169,12 +166,9 @@ const NavbarStyle = styled(motion.div)`
 				right: 0;
 				width: 60%;
 				height: 100vh;
-
-			
 			}
 
 			li {
-			
 				font-size: 2rem;
 				cursor: pointer;
 				display: flex;
