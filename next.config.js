@@ -8,6 +8,15 @@ const nextConfig = {
 	images: {
 		domains: ['res.cloudinary.com'],
 	},
+	async redirects() {
+		return [
+			{
+				source: '/facebook',
+				destination: 'https://google.com',
+				permanent: false,
+			},
+		];
+	},
 };
 
 module.exports = nextConfig;

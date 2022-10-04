@@ -7,6 +7,8 @@ import {
 } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import { homeParent, toUp } from '../lib/animate';
+import Link from 'next/link';
+
 const HomeBanner = () => {
 	return (
 		<HomeStyle
@@ -35,30 +37,21 @@ const HomeBanner = () => {
 				Resume
 			</motion.a>
 			<motion.div className="home_icons" variants={toUp}>
-				<motion.a
-					href="https://www.facebook.com"
-					target="_blank"
-					whileHover={{ y: -2 }}
-					rel="noopener noreferrer"
-				>
-					<AiFillFacebook />
-				</motion.a>
-				<motion.a
-					href="https://www.linkedin.com/in/zin-paing-htet-49356a17b/ "
-					target="_blank"
-					whileHover={{ y: -2 }}
-					rel="noopener noreferrer"
-				>
-					<AiFillLinkedin />
-				</motion.a>
-				<motion.a
-					href="https://www.instagram.com"
-					target="_blank"
-					whileHover={{ y: -2 }}
-					rel="noopener noreferrer"
-				>
-					<AiFillInstagram />
-				</motion.a>
+				<Link href="https://www.google.com">
+					<a target="_blank">
+						<AiFillFacebook />
+					</a>
+				</Link>
+				<Link href="https://www.linkedin.com/in/zin-paing-htet-49356a17b/">
+					<a target="_blank">
+						<AiFillLinkedin />
+					</a>
+				</Link>
+				<Link href="https://www.instagram.com">
+					<a target="_blank">
+						<AiFillInstagram />
+					</a>
+				</Link>
 			</motion.div>
 		</HomeStyle>
 	);
@@ -134,6 +127,11 @@ const HomeStyle = styled(motion.div)`
 			font-size: 4rem;
 			cursor: pointer;
 			color: ${(props) => props.theme.thirdColor};
+			transition: all 0.5s linear;
+			&:hover {
+				transform: scale(0.9);
+				transition: all 0.2s linear;
+			}
 		}
 	}
 `;
