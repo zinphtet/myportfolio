@@ -19,12 +19,10 @@ const Projects = () => {
 				transition={{ duration: 1 }}
 				viewport={{ once: true }}
 			>
-				<p>Some Projects I've build </p>
+				<p>{"Some Projects I've build"} </p>
 				<div className="line"></div>
 			</motion.div>
-			<motion.div
-				className="projects_container"
-			>
+			<motion.div className="projects_container">
 				{dataArr.map(({ id, attributes }) => (
 					<ProjectItem key={id} data={attributes} />
 				))}
