@@ -37,16 +37,11 @@ const HomeBanner = () => {
 				Resume
 			</motion.a>
 			<motion.div className="home_icons" variants={toUp}>
-				<a
-					target="_blank"
-					rel="noreferrer noopener"
-					href={'https://www.google.com'}
-				>
+				<a rel="noreferrer noopener" href={'https://www.google.com'}>
 					<AiFillFacebook />
 				</a>
 				{/* <Link href="https://www.linkedin.com/in/zin-paing-htet-49356a17b/"> */}
 				<a
-					target="_blank"
 					rel="noreferrer noopener"
 					href="https://www.linkedin.com/in/zin-paing-htet-49356a17b/"
 				>
@@ -54,11 +49,7 @@ const HomeBanner = () => {
 				</a>
 				{/* </Link> */}
 				{/* <Link href="https://www.instagram.com"> */}
-				<a
-					target="_blank"
-					rel="noreferrer noopener"
-					href="https://www.instagram.com"
-				>
+				<a rel="noreferrer noopener" href="https://www.instagram.com">
 					<AiFillInstagram />
 				</a>
 				{/* </Link> */}
