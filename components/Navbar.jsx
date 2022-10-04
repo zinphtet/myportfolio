@@ -33,7 +33,7 @@ const Navbar = ({ darkmode, darkmodeHandler }) => {
 		>
 			<div className="logo">
 				<div className="img_container">
-					<Image src={boyimg.src} layout="fill" />
+					<Image src={boyimg.src} layout="fill" alt="profile" />
 				</div>
 			</div>
 			<div className="menu" onClick={() => setShow(true)}>

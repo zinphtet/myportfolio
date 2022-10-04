@@ -12,7 +12,7 @@ export default function Home() {
 	useEffect(() => {
 		window.addEventListener('scroll', function () {
 			if (!(this.scrollY > 300)) {
-				if (!showArr) return;
+				// if (!showArr) return;
 				setShowArr(false);
 				return;
 			}
