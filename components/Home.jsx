@@ -39,15 +39,15 @@ const HomeBanner = () => {
 					href="https://www.facebook.com"
 					target="_blank"
 					whileHover={{ y: -2 }}
-					rel="noreferrer"
+					rel="noopener noreferrer"
 				>
 					<AiFillFacebook />
 				</motion.a>
 				<motion.a
-					href="https://www.linkedin.com"
+					href="https://www.linkedin.com/in/zin-paing-htet-49356a17b/ "
 					target="_blank"
 					whileHover={{ y: -2 }}
-					rel="noreferrer"
+					rel="noopener noreferrer"
 				>
 					<AiFillLinkedin />
 				</motion.a>
@@ -55,7 +55,7 @@ const HomeBanner = () => {
 					href="https://www.instagram.com"
 					target="_blank"
 					whileHover={{ y: -2 }}
-					rel="noreferrer"
+					rel="noopener noreferrer"
 				>
 					<AiFillInstagram />
 				</motion.a>
