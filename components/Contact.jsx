@@ -28,7 +28,11 @@ const Contact = () => {
 					transition={{ duration: 1 }}
 					viewport={{ once: true, amount: 0.5 }}
 				>
-					<AiOutlinePhone /> <a href="tel:09774083439"> 09774083439 </a>
+					<AiOutlinePhone />{' '}
+					<a href="tel:09774083439" rel="noreferrer noopener">
+						{' '}
+						09774083439{' '}
+					</a>
 				</motion.div>
 				<motion.div
 					className="email"
