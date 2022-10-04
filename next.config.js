@@ -15,6 +15,16 @@ const nextConfig = {
 				destination: 'https://google.com',
 				permanent: false,
 			},
+			{
+				source: '/linkedin',
+				destination: 'https://www.linkedin.com',
+				permanent: false,
+			},
+			{
+				source: '/instagram',
+				destination: 'https://instagram.com',
+				permanent: false,
+			},
 		];
 	},
 };

@@ -37,31 +37,22 @@ const HomeBanner = () => {
 				Resume
 			</motion.a>
 			<motion.div className="home_icons" variants={toUp}>
-				<a
-					target="_blank"
-					rel="noreferrer noopener"
-					href={'https://www.google.com'}
-				>
-					<AiFillFacebook />
-				</a>
-				{/* <Link href="https://www.linkedin.com/in/zin-paing-htet-49356a17b/"> */}
-				<a
-					target="_blank"
-					rel="noreferrer noopener"
-					href="https://www.linkedin.com/in/zin-paing-htet-49356a17b/"
-				>
-					<AiFillLinkedin />
-				</a>
-				{/* </Link> */}
-				{/* <Link href="https://www.instagram.com"> */}
-				<a
-					target="_blank"
-					rel="noreferrer noopener"
-					href="https://www.instagram.com"
-				>
-					<AiFillInstagram />
-				</a>
-				{/* </Link> */}
+				<Link href="/facebook">
+					<a>
+						<AiFillFacebook />
+					</a>
+				</Link>
+				{/* https://www.linkedin.com/in/zin-paing-htet-49356a17b/ */}
+				<Link href="/linkedin">
+					<a>
+						<AiFillLinkedin />
+					</a>
+				</Link>
+				<Link href="/instagram">
+					<a>
+						<AiFillInstagram />
+					</a>
+				</Link>
 			</motion.div>
 		</HomeStyle>
 	);
