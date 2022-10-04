@@ -19,7 +19,7 @@ export default function Home() {
 			if (showArr) return;
 			setShowArr(true);
 		});
-	}, []);
+	});
 
 	return (
 		<>
