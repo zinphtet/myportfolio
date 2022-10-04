@@ -8,7 +8,7 @@ const Projects = () => {
 	const { data, loading, error } = useQuery(GET_PROJECTS);
 	if (loading) return <div>Loading ...</div>;
 	if (error) return <div>Error ...</div>;
-	console.log(data.projects.data);
+
 	const dataArr = data.projects.data;
 	return (
 		<ProjectsStyle className="section-2" id="projects">
