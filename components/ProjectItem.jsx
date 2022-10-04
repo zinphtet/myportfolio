@@ -6,7 +6,7 @@ import projimg from '../imgs/proj.png';
 import Image from 'next/image';
 import TechItem from './TechItem';
 import { motion } from 'framer-motion';
-import {  projItem } from '../lib/animate';
+import { projItem } from '../lib/animate';
 const ProjectItem = ({ data }) => {
 	const { title, desc, demo_link, github_link, image, techs } = data;
 	const main_img = image?.data?.attributes?.formats.small?.url;
@@ -42,10 +42,18 @@ const ProjectItem = ({ data }) => {
 				</div>
 			</div>
 			<div className="icons">
-				<a href={github_link || 'nothiong'} target="_blank">
+				<a
+					href={github_link || 'nothiong'}
+					target="_blank"
+					rel="noreferrer noopener"
+				>
 					<AiOutlineGithub />
 				</a>
-				<a href={demo_link || 'noting'} target="_blank">
+				<a
+					href={demo_link || 'noting'}
+					target="_blank"
+					rel="noreferrer noopener"
+				>
 					<FiExternalLink />
 				</a>
 			</div>
@@ -88,8 +96,7 @@ const ProjectItemStyle = styled(motion.div)`
 	.img {
 		width: 100%;
 		.img_container {
-
-			width: 100%;	
+			width: 100%;
 		}
 	}
 	.icons {
