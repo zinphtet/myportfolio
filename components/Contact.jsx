@@ -54,8 +54,8 @@ const Contact = () => {
 				viewport={{ once: true, amount: 0.5 }}
 			>
 				I am looking for <span>new opportunities</span> . My inbox is always
-				open .Whether you want to ask question or just want to say hi , I'll try
-				my best to get back to you!
+				open .Whether you want to ask question or just want to say hi , {"I'll"}{' '}
+				try my best to get back to you!
 			</motion.p>
 			<motion.div
 				initial={{ opacity: 0, y: 70 }}

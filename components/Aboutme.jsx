@@ -37,10 +37,10 @@ const Aboutme = () => {
 					transition={{ duration: 1 }}
 					viewport={{ once: true, amount: 0.5 }}
 				>
-					I am 4th year student at{' '}
+					I am 4th year student at
 					<span> Mandalay Technological University (MTU) </span>. Because of the
 					coup happening in our country , I am not able to join my
-					university.Although I am not CS student , I am interested in{' '}
+					university.Although I am not CS student , I am interested in
 					<span>Computer Science</span> and related technologies.
 				</motion.p>
 				<motion.p
@@ -50,7 +50,7 @@ const Aboutme = () => {
 					transition={{ duration: 1 }}
 					viewport={{ once: true, amount: 0.5 }}
 				>
-					Now I am <span>looking for</span> new role as{' '}
+					Now I am <span>looking for</span> new role as
 					<span>junior developer , intern </span> or something.If you want to
 					hire or help me , you can contact <span>my number or via email</span>{' '}
 					.

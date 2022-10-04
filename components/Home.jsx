@@ -38,17 +38,17 @@ const HomeBanner = () => {
 			</motion.a>
 			<motion.div className="home_icons" variants={toUp}>
 				<Link href="https://www.google.com">
-					<a target="_blank">
+					<a target="_blank" rel="noreferrer">
 						<AiFillFacebook />
 					</a>
 				</Link>
 				<Link href="https://www.linkedin.com/in/zin-paing-htet-49356a17b/">
-					<a target="_blank">
+					<a target="_blank" rel="noreferrer">
 						<AiFillLinkedin />
 					</a>
 				</Link>
 				<Link href="https://www.instagram.com">
-					<a target="_blank">
+					<a target="_blank" rel="noreferrer">
 						<AiFillInstagram />
 					</a>
 				</Link>
