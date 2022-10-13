@@ -39,7 +39,7 @@ const Navbar = ({ darkmode, darkmodeHandler }) => {
 			<div className="menu" onClick={() => setShow(true)}>
 				<BiMenuAltRight />
 			</div>
-			<div className={`nav ${show ? 'show' : ''}`}>
+			<motion.div className={`nav ${show ? 'show' : ''}`}>
 				<ul>
 					<motion.li
 						className="close"
@@ -81,7 +81,7 @@ const Navbar = ({ darkmode, darkmodeHandler }) => {
 						)}
 					</motion.li>
 				</ul>
-			</div>
+			</motion.div>
 		</NavbarStyle>
 	);
 };
@@ -138,14 +138,16 @@ const NavbarStyle = styled(motion.div)`
 		@media screen and (max-width: 37.5rem) {
 			position: absolute;
 			top: 0;
-			right: -110%;
+			right: 0%;
 			transform: scale(0);
-
+			transform-origin: right;
 			backdrop-filter: blur(0.2rem);
 			display: block;
 
 			width: 100%;
 			height: 100vh;
+			/* width: 100%; */
+			/* height: 100vh; */
 			transition: all 0.35s linear;
 
 			z-index: 100;
@@ -207,7 +209,6 @@ const NavbarStyle = styled(motion.div)`
 	}
 	.show {
 		right: 0;
-
 		transform: scale(1);
 		transition: all 0.35 linear;
 	}

@@ -26,9 +26,6 @@ const Projects = () => {
 				{dataArr.map(({ id, attributes }) => (
 					<ProjectItem key={id} data={attributes} />
 				))}
-				<ProjectItem data={{ nothing: 1 }} />
-				<ProjectItem data={{ nothing: 1 }} />
-				<ProjectItem data={{ nothing: 1 }} />
 			</motion.div>
 			<motion.div
 				className="btn_div"
