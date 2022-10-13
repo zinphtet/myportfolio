@@ -33,7 +33,13 @@ const HomeBanner = () => {
 					<span>Nextjs</span> .
 				</motion.p>
 			</div>
-			<motion.a href="" className="downloadcv btn" variants={toUp}>
+			<motion.a
+				href="../public/info.pdf"
+				download={'myresume.pdf'}
+				className="downloadcv btn"
+				variants={toUp}
+				target="_blank"
+			>
 				Resume
 			</motion.a>
 			<motion.div className="home_icons" variants={toUp}>

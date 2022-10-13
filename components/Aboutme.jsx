@@ -28,7 +28,7 @@ const Aboutme = () => {
 					specializing <span>React and NextJs</span> . I am learning Web
 					Development for 2 years . During COVID-19 , I wanted to learn new
 					skills . So I learned Web development. Now I am really love this. I
-					love creating Web apps using React and NextJs.
+					love creating Web apps using ReactJs.
 				</motion.p>
 				<motion.p
 					className="my_info"
@@ -41,7 +41,7 @@ const Aboutme = () => {
 					<span> Mandalay Technological University (MTU) </span>. Because of the
 					coup happening in our country , I am not able to join my
 					university.Although I am not CS student , I am interested in
-					<span>Computer Science</span> and related technologies.
+					<span> Computer Science</span> and related technologies.
 				</motion.p>
 				<motion.p
 					className="my_info"
@@ -50,10 +50,10 @@ const Aboutme = () => {
 					transition={{ duration: 1 }}
 					viewport={{ once: true, amount: 0.5 }}
 				>
-					Now I am <span>looking for</span> new role as
-					<span>junior developer , intern </span> or something.If you want to
-					hire or help me , you can contact <span>my number or via email</span>{' '}
-					.
+					Now I am <span> looking for </span> new role as
+					<span> junior developer , intern </span> or something.If you want to
+					hire or help me , you can contact{' '}
+					<span> my number or via email </span> .
 				</motion.p>
 			</div>
 			<motion.div
