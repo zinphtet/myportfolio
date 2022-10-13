@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ProjectItem from './ProjectItem';
 import { useQuery } from '@apollo/client';
 import { GET_PROJECTS } from '../lib/query';
 import { motion } from 'framer-motion';
 const Projects = () => {
+	const [showMore, setShowMore] = useState(false);
 	const { data, loading, error } = useQuery(GET_PROJECTS);
 	if (loading) return <div>Loading ...</div>;
 	if (error) return <div>Error ...</div>;
 
 	const dataArr = data.projects.data;
+	const showData = showMore ? dataArr : dataArr.slice(0, 6);
 	return (
 		<ProjectsStyle className="section-2" id="projects">
 			<motion.div
@@ -23,7 +25,7 @@ const Projects = () => {
 				<div className="line"></div>
 			</motion.div>
 			<motion.div className="projects_container">
-				{dataArr.map(({ id, attributes }) => (
+				{showData.map(({ id, attributes }) => (
 					<ProjectItem key={id} data={attributes} />
 				))}
 			</motion.div>
@@ -37,7 +39,10 @@ const Projects = () => {
 				transition={{ duration: 1 }}
 				viewport={{ once: true, amount: 0.5 }}
 			>
-				<button className="btn">Show More</button>
+				<button className="btn" onClick={() => setShowMore((prev) => !prev)}>
+					{' '}
+					{showMore ? 'Show Less' : 'Show More'}
+				</button>
 			</motion.div>
 		</ProjectsStyle>
 	);

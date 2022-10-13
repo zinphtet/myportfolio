@@ -146,8 +146,6 @@ const NavbarStyle = styled(motion.div)`
 
 			width: 100%;
 			height: 100vh;
-			/* width: 100%; */
-			/* height: 100vh; */
 			transition: all 0.35s linear;
 
 			z-index: 100;
