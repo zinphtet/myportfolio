@@ -35,7 +35,7 @@ const HomeBanner = () => {
 			</div>
 			<motion.a
 				href="./resume.pdf"
-				download={'myresume.pdf'}
+				download={'zphresume.pdf'}
 				className="downloadcv btn"
 				variants={toUp}
 				target="_blank"
