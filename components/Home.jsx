@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import {
 	AiFillFacebook,
 	AiFillLinkedin,
-	AiFillInstagram,
 	AiOutlineGithub,
 } from 'react-icons/ai';
 import { motion } from 'framer-motion';
@@ -36,7 +35,7 @@ const HomeBanner = () => {
 			</div>
 			<motion.a
 				href="./resume.pdf"
-				download
+				download={'myresume.pdf'}
 				className="downloadcv btn"
 				variants={toUp}
 				target="_blank"
