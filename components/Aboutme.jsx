@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import myimg from '../imgs/main.jpg';
 import { motion } from 'framer-motion';
+import profile from './profile.jpg';
 const Aboutme = () => {
 	return (
 		<AboutmeStyle className="section-3" id="about">
@@ -51,7 +52,7 @@ const Aboutme = () => {
 					viewport={{ once: true, amount: 0.5 }}
 				>
 					Now I am <span> looking for </span> new role as
-					<span> junior developer , intern </span> or something.If you want to
+					<span> junior developer , intern </span> or something . If you want to
 					hire or help me , you can contact{' '}
 					<span> my number or via email </span> .
 				</motion.p>
@@ -68,7 +69,13 @@ const Aboutme = () => {
 					style={{ position: 'relative' }}
 					whileHover={{ scale: 1.05 }}
 				>
-					<Image src={myimg.src} layout="fill" alt="about me img" />
+					<Image
+						src={profile.src}
+						layout="responsive"
+						width={6}
+						height={5.5}
+						alt="about me img"
+					/>
 				</motion.div>
 			</motion.div>
 		</AboutmeStyle>

@@ -4,6 +4,7 @@ import {
 	AiFillFacebook,
 	AiFillLinkedin,
 	AiFillInstagram,
+	AiOutlineGithub,
 } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import { homeParent, toUp } from '../lib/animate';
@@ -34,7 +35,7 @@ const HomeBanner = () => {
 				</motion.p>
 			</div>
 			<motion.a
-				href="./info.pdf"
+				href="./resume.pdf"
 				download={'myresume.pdf'}
 				className="downloadcv btn"
 				variants={toUp}
@@ -48,17 +49,17 @@ const HomeBanner = () => {
 						<AiFillFacebook />
 					</a>
 				</Link>
-				{/* https://www.linkedin.com/in/zin-paing-htet-49356a17b/ */}
+
 				<Link href="/linkedin">
 					<a target={'_blank'} rel="noopener noreferrer">
 						<AiFillLinkedin />
 					</a>
 				</Link>
-				{/* <Link href="/instagram">
+				<Link href="/github">
 					<a target={'_blank'} rel="noopener noreferrer">
-						<AiFillInstagram />
+						<AiOutlineGithub />
 					</a>
-				</Link> */}
+				</Link>
 			</motion.div>
 		</HomeStyle>
 	);

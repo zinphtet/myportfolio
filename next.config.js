@@ -21,8 +21,8 @@ const nextConfig = {
 				permanent: false,
 			},
 			{
-				source: '/instagram',
-				destination: 'https://instagram.com',
+				source: '/github',
+				destination: 'https://github.com/zinphtet',
 				permanent: false,
 			},
 		];
