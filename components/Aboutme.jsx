@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import myimg from '../imgs/main.jpg';
+
 import { motion } from 'framer-motion';
 import profile from './profile.jpg';
 const Aboutme = () => {
