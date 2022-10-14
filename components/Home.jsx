@@ -34,7 +34,7 @@ const HomeBanner = () => {
 				</motion.p>
 			</div>
 			<motion.a
-				href="../public/info.pdf"
+				href="./info.pdf"
 				download={'myresume.pdf'}
 				className="downloadcv btn"
 				variants={toUp}
@@ -54,11 +54,11 @@ const HomeBanner = () => {
 						<AiFillLinkedin />
 					</a>
 				</Link>
-				<Link href="/instagram">
+				{/* <Link href="/instagram">
 					<a target={'_blank'} rel="noopener noreferrer">
 						<AiFillInstagram />
 					</a>
-				</Link>
+				</Link> */}
 			</motion.div>
 		</HomeStyle>
 	);

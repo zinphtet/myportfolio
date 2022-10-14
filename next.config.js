@@ -12,12 +12,12 @@ const nextConfig = {
 		return [
 			{
 				source: '/facebook',
-				destination: 'https://google.com',
+				destination: 'https://www.facebook.com/zinpaing.htet.902 ',
 				permanent: false,
 			},
 			{
 				source: '/linkedin',
-				destination: 'https://www.linkedin.com',
+				destination: 'https://www.linkedin.com/in/zin-paing-htet-49356a17b/',
 				permanent: false,
 			},
 			{
