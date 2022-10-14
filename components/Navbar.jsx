@@ -97,10 +97,6 @@ const NavbarStyle = styled(motion.div)`
 	overflow-x: hidden;
 	color: ${(props) => props.theme.text};
 
-	@media screen and (max-width: 37.5rem) {
-		box-shadow: 0.2rem 0.2rem 0.2rem gray;
-	}
-
 	.logo {
 		flex: 1;
 		position: relative;
@@ -116,12 +112,12 @@ const NavbarStyle = styled(motion.div)`
 		p {
 			font-size: 3rem;
 
-			@media screen and (max-width: 56.25rem) {
+			/* @media screen and (max-width: 56.25rem) {
 				color: red;
 			}
 			@media screen and (max-width: 37.5rem) {
 				color: green;
-			}
+			} */
 		}
 	}
 	.menu {
