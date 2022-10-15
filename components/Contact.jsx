@@ -71,7 +71,7 @@ const Contact = () => {
 				viewport={{ once: true, amount: 0.5 }}
 			>
 				<a href="mailto:zinpainghtet.215108@gmail.com">
-					<button>Say Hello</button>
+					<button>Hello or Hire Me</button>
 				</a>
 			</motion.div>
 		</ContactStyle>
