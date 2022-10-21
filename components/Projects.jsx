@@ -4,10 +4,16 @@ import ProjectItem from './ProjectItem';
 import { useQuery } from '@apollo/client';
 import { GET_PROJECTS } from '../lib/query';
 import { motion } from 'framer-motion';
+import Loading from './Loading';
 const Projects = () => {
 	const [showMore, setShowMore] = useState(false);
 	const { data, loading, error } = useQuery(GET_PROJECTS);
-	if (loading) return <div>Loading ...</div>;
+	if (loading)
+		return (
+			<div className="loading">
+				<Loading />
+			</div>
+		);
 	if (error) return <div>Error ...</div>;
 
 	const dataArr = data.projects.data;

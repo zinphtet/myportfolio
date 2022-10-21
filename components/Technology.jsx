@@ -1,24 +1,20 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import SkillItem from './SkillItem';
-import hasura from '../imgs/hasura.jpg';
-import js from '../imgs/js.png';
-import next from '../imgs/next.png';
-import react from '../imgs/react.png';
-import strapi from '../imgs/strapi.png';
-import sass from '../imgs/sass.jpg';
-import css from '../imgs/css.jpg';
-import html from '../imgs/html.jpg';
-import redux from '../imgs/redux.png';
 import { FaGraduationCap } from 'react-icons/fa';
 import { TbNetwork } from 'react-icons/tb';
 import { useQuery } from '@apollo/client';
 import { GET_SKILLS } from '../lib/query';
 import { motion } from 'framer-motion';
-
+import Loading from './Loading';
 export default function Technology() {
 	const { data, loading, error } = useQuery(GET_SKILLS);
-	if (loading) return <div>Loading ...</div>;
+	if (loading)
+		return (
+			<div className="loading">
+				<Loading />
+			</div>
+		);
 	if (error) return <div>Error ...</div>;
 	const dataArr = data.skills.data;
 	return (
